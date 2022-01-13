@@ -13,11 +13,11 @@ class minecraft {
     ensure => file,
     content => 'uela=true',
   }
-  file {'/ etc/systemd/system/minecraft.service':
+  file {'/etc/systemd/system/minecraft.service':
     ensure => file,
     source => 'puppet:///modules/minecraft/minecraft.service',
   }
-  service {/minecraft':
+  service {'minecraft':
     ensure => running,
     ensure => true,
   }
